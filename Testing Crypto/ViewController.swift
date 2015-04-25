@@ -24,12 +24,13 @@ class ViewController: UIViewController, AddPerfDataDelegate {
         currentlyRunningButton = sender
         outputText.text = ""
 
-        switch sender.currentTitle! {
-        case "65K String":
+        switch sender.restorationIdentifier! {
+        case "65kString":
             startTesting()
-            
-        case "20MB Files":
-            startTestingLargeFiles()
+        case "5mFile":
+            startTestingLargeFiles(5)
+        case "30mFile":
+            startTestingLargeFiles(30)
         default:
             break
         }
@@ -37,24 +38,24 @@ class ViewController: UIViewController, AddPerfDataDelegate {
         
     }
     
-    
+    func startTestingWithData(data: NSData) {
+        var timer = Timer()
+        timer.delegate = self
+        timer.run(data)
+    }
     
     func startTesting() {
         let data = ("asdfasdfasdfasdfasdfasdbahhkjhlkjhlkjhlkjhlkhlkjhl" as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
-        
-        var timer = Timer()
-        timer.delegate = self
-        timer.run(data)
-        
+        startTestingWithData(data)
     }
 
-    func startTestingLargeFiles() {
-        let data = ("asdfasdfasdfasdfasdfasdbahhkjhlkjhlkjhlkjhlkhlkjhl" as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+    func startTestingLargeFiles(size: Int) {
         
-        var timer = Timer()
-        timer.delegate = self
-        timer.run(data)
+        let file = size.description + "m"
+        let path = NSBundle.mainBundle().pathForResource(file, ofType: "zip")!
         
+            let text2 = path.dataUsingEncoding(NSUTF8StringEncoding)!
+            startTestingWithData(text2)
     }
 
     

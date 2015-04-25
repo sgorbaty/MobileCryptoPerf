@@ -11,23 +11,36 @@ import CommonCrypto
 
 
 class CommonCryptoClass : CryptoTester{
-    var name = "CommonCrypto AES 128"
+    var name = String()
+    var algoritm = CCAlgorithm()
+    
+    init (name: String, withAlgoritm algoritm: CCAlgorithm = UInt32(kCCAlgorithmAES128)) {
+        self.name = name
+        self.algoritm = algoritm
+    }
 
-    static let secretkey = "tomafdfsdfcat"
-    static let secretKeyData = secretkey.dataUsingEncoding(NSUTF8StringEncoding)!
+    static let secretkey = NSMutableData(length: kCCBlockSizeAES128)!
+    static let secretKeyData = SecRandomCopyBytes(kSecRandomDefault, kCCBlockSizeAES128, UnsafeMutablePointer<UInt8>(secretkey.mutableBytes))
     static let iv = NSMutableData(length: kCCBlockSizeAES128)!
     static let randomRes = SecRandomCopyBytes(kSecRandomDefault, kCCBlockSizeAES128, UnsafeMutablePointer<UInt8>(iv.mutableBytes))
-    static let algoritm:  CCAlgorithm = UInt32(kCCAlgorithmAES128)
     static let options:   CCOptions   = UInt32(kCCOptionPKCS7Padding)
 
     
-    func encrypt(someData: NSData) -> NSData{
+    func encrypt(someData: NSData) -> NSData {
+        return cryptInternal(someData, method: algoritm, operation: UInt32(kCCEncrypt))
+    }
+    
+    func decrypt(someData: NSData) -> NSData{
+        return cryptInternal(someData, method: algoritm, operation: UInt32(kCCDecrypt))
+    }
+
+    
+    func cryptInternal(someData: NSData, method algoritm: CCAlgorithm, operation: CCOperation) -> NSData{
         var bufferData    = NSMutableData(length: someData.length + kCCBlockSizeAES128)!
-        let operation: CCOperation = UInt32(kCCEncrypt)
         var numBytesEncrypted: Int = 0
         
-        var cryptStatus = CCCrypt(operation, CommonCryptoClass.algoritm, CommonCryptoClass.options,
-            CommonCryptoClass.secretKeyData.bytes, kCCBlockSizeAES128,
+        var cryptStatus = CCCrypt(operation, algoritm, CommonCryptoClass.options,
+            CommonCryptoClass.secretkey.bytes, kCCBlockSizeAES128,
             CommonCryptoClass.iv.bytes,
             someData.bytes, someData.length,
             bufferData.mutableBytes, bufferData.length,
@@ -41,26 +54,9 @@ class CommonCryptoClass : CryptoTester{
             return NSData()
         }
     }
+
+
     
-    func decrypt(someData: NSData) -> NSData{
-        var bufferData    = NSMutableData(length: someData.length + kCCBlockSizeAES128)!
-        let operation: CCOperation = UInt32(kCCDecrypt)
-        var numBytesEncrypted: Int = 0
-        
-        var cryptStatus = CCCrypt(operation, CommonCryptoClass.algoritm, CommonCryptoClass.options,
-            CommonCryptoClass.secretKeyData.bytes, kCCBlockSizeAES128,
-            CommonCryptoClass.iv.bytes,
-            someData.bytes, someData.length, // encrypted data
-            bufferData.mutableBytes, bufferData.length,
-            &numBytesEncrypted)
-        
-        if (cryptStatus == 0) {
-            bufferData.length = numBytesEncrypted
-            return bufferData
-        } else {
-            println("Error: \(cryptStatus)")
-            return NSData()
-        }
-    }
+    
 
 }

@@ -87,9 +87,9 @@ class Executor {
             }
             let finishTime = NSDate()
             let executionTime = finishTime.timeIntervalSinceDate(startTime)
-            let normalizedTime = executionTime/1000
-//            println("Name: \(exec.whoAmI()) : \(1/normalizedTime) ops/sec")
-            delegate?.sendData("\(exec.whoAmI()) : \(1/normalizedTime) ops/sec")
+            let normalizedTime = 1/(executionTime/1000.0)
+            let formatted = NSString(format:"%.2f", normalizedTime)
+            delegate?.sendData("\(exec.whoAmI()) : \(formatted) ops/sec")
             
         }
         delegate?.finished()
