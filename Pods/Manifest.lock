@@ -1,0 +1,21 @@
+PODS:
+  - OpenSSL-Universal (1.0.1.l)
+
+DEPENDENCIES:
+  - OpenSSL-Universal (from `https://github.com/krzyzanowskim/OpenSSL.git`, branch
+    `master`)
+
+EXTERNAL SOURCES:
+  OpenSSL-Universal:
+    :branch: :master
+    :git: https://github.com/krzyzanowskim/OpenSSL.git
+
+CHECKOUT OPTIONS:
+  OpenSSL-Universal:
+    :commit: e25dd35ec70bd532928903f7d261a8c6ff41838a
+    :git: https://github.com/krzyzanowskim/OpenSSL.git
+
+SPEC CHECKSUMS:
+  OpenSSL-Universal: eeb215fff0c6b65b6ba8f4262ef52d3baf2df2d7
+
+COCOAPODS: 0.36.4
