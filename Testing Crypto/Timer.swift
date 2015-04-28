@@ -21,7 +21,7 @@ class Timer {
         let aes128 = CommonCryptoClass(name: "AES128")
         let blowFish = CommonCryptoClass(name: "BlowFish", withAlgoritm: UInt32(kCCAlgorithmBlowfish))
         let rc4 = CommonCryptoClass(name: "RC4", withAlgoritm: UInt32(kCCAlgorithmRC4))
-
+        let aesXst = AESOpenSSLClass(name: "Aes128 Xst")
         
         executor.add(EncryptCommand(tester: aes128, data: data))
         executor.add(DecryptCommand(tester: aes128, data: data))
@@ -31,6 +31,9 @@ class Timer {
 
         executor.add(EncryptCommand(tester: rc4, data: data))
         executor.add(DecryptCommand(tester: rc4, data: data))
+
+        executor.add(EncryptCommand(tester: aesXst, data: data))
+        executor.add(DecryptCommand(tester: aesXst, data: data))
 
         
         executor.executeAll()

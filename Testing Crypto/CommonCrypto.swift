@@ -26,11 +26,11 @@ class CommonCryptoClass : CryptoTester{
     static let options:   CCOptions   = UInt32(kCCOptionPKCS7Padding)
 
     
-    func encrypt(someData: NSData) -> NSData {
+    func encrypt(someData: NSData) -> NSData? {
         return cryptInternal(someData, method: algoritm, operation: UInt32(kCCEncrypt))
     }
     
-    func decrypt(someData: NSData) -> NSData{
+    func decrypt(someData: NSData) -> NSData? {
         return cryptInternal(someData, method: algoritm, operation: UInt32(kCCDecrypt))
     }
 

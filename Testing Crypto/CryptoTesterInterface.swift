@@ -10,8 +10,8 @@ import Foundation
 
 protocol CryptoTester {
     var name: String { get set}
-    func encrypt(data: NSData) -> NSData
-    func decrypt(data: NSData) -> NSData
+    func encrypt(data: NSData) -> NSData?
+    func decrypt(data: NSData) -> NSData?
     
 }
 
