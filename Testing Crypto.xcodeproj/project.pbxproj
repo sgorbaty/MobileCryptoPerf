@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7B17A1EE1AE76FB400B925FE /* CommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17A1ED1AE76FB400B925FE /* CommonCrypto.swift */; };
+		7B39AEAE1AEF00CF007F0536 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B39AEAC1AEF00CF007F0536 /* libcrypto.a */; };
+		7B39AEAF1AEF00CF007F0536 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B39AEAD1AEF00CF007F0536 /* libssl.a */; };
 		7B63EE661AE5FBA7002C7EDC /* module.map in Sources */ = {isa = PBXBuildFile; fileRef = 7B63EE531AE5FBA7002C7EDC /* module.map */; };
 		7B63EE671AE5FBA7002C7EDC /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7B63EE561AE5FBA7002C7EDC /* README.md */; };
 		7B63EE6A1AE5FBA7002C7EDC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B63EE601AE5FBA7002C7EDC /* Info.plist */; };
@@ -20,12 +22,23 @@
 		7B6B2FBD1AE5D5790090DC59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B6B2FBB1AE5D5790090DC59 /* Main.storyboard */; };
 		7B6B2FBF1AE5D5790090DC59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B6B2FBE1AE5D5790090DC59 /* Images.xcassets */; };
 		7B6B2FC21AE5D5790090DC59 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B6B2FC01AE5D5790090DC59 /* LaunchScreen.xib */; };
-		7BC90FD01AE78B1E004BB22B /* SHA256iOs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B63EE771AE5FBA7002C7EDC /* SHA256iOs.framework */; };
+		7B8411A41AEB053900B4FD19 /* 30m.zip in Resources */ = {isa = PBXBuildFile; fileRef = 7B8411A31AEB053900B4FD19 /* 30m.zip */; };
+		7B8411A61AEB05B300B4FD19 /* 5m.zip in Resources */ = {isa = PBXBuildFile; fileRef = 7B8411A51AEB05B300B4FD19 /* 5m.zip */; };
+		7B9F50EC1AEF13D5001F3849 /* AESOpenSSLClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F50EB1AEF13D5001F3849 /* AESOpenSSLClass.swift */; };
+		7BBEC5DD1AEF593D004C947C /* AesXTS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBEC5DC1AEF593D004C947C /* AesXTS.m */; };
 		7BC90FD31AE80E08004BB22B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC90FD21AE80E08004BB22B /* Timer.swift */; };
 		7BC90FD51AE812D9004BB22B /* CryptoTesterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC90FD41AE812D9004BB22B /* CryptoTesterInterface.swift */; };
+		A85347AFF82E66788157B3A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F121FF25608929015BCA06 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7B341F001AEFEFA400C84EFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B63EE581AE5FBA7002C7EDC /* SHA256.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A2D39BE0198D841400E2D317;
+			remoteInfo = SHA256iOs;
+		};
 		7B63EE721AE5FBA7002C7EDC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7B63EE581AE5FBA7002C7EDC /* SHA256.xcodeproj */;
@@ -50,7 +63,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02F312620A66F7EF522B1E08 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		23F121FF25608929015BCA06 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B17A1ED1AE76FB400B925FE /* CommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCrypto.swift; sourceTree = "<group>"; };
+		7B39AEAC1AEF00CF007F0536 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../../../usr/local/ssl/ios/lib/libcrypto.a; sourceTree = "<group>"; };
+		7B39AEAD1AEF00CF007F0536 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../../../usr/local/ssl/ios/lib/libssl.a; sourceTree = "<group>"; };
+		7B39AEB21AEF06A1007F0536 /* Crypto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crypto-Bridging-Header.h"; sourceTree = "<group>"; };
 		7B63EE351AE5F821002C7EDC /* CommonCrypto copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CommonCrypto copy-Info.plist"; path = "/Users/sergey.gorbaty/Documents/research/Testing Crypto/CommonCrypto copy-Info.plist"; sourceTree = "<absolute>"; };
 		7B63EE3F1AE5F82E002C7EDC /* CommonCrypto copy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CommonCrypto copy copy-Info.plist"; path = "/Users/sergey.gorbaty/Documents/research/Testing Crypto/CommonCrypto copy copy-Info.plist"; sourceTree = "<absolute>"; };
 		7B63EE511AE5FBA7002C7EDC /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -76,8 +94,14 @@
 		7B6B2FCC1AE5D5790090DC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B6B2FCD1AE5D5790090DC59 /* Testing_CryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing_CryptoTests.swift; sourceTree = "<group>"; };
 		7B6B2FEB1AE5F1FC0090DC59 /* Testing Crypto copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Testing Crypto copy-Info.plist"; path = "/Users/sergey.gorbaty/Documents/research/Testing Crypto/Testing Crypto copy-Info.plist"; sourceTree = "<absolute>"; };
+		7B8411A31AEB053900B4FD19 /* 30m.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = 30m.zip; sourceTree = "<group>"; };
+		7B8411A51AEB05B300B4FD19 /* 5m.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = 5m.zip; sourceTree = "<group>"; };
+		7B9F50E71AEF1100001F3849 /* OpenSSLCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLCrypto.h; path = ../OpenSSLCrypto.h; sourceTree = "<group>"; };
+		7B9F50EB1AEF13D5001F3849 /* AESOpenSSLClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESOpenSSLClass.swift; sourceTree = "<group>"; };
+		7BBEC5DC1AEF593D004C947C /* AesXTS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AesXTS.m; sourceTree = "<group>"; };
 		7BC90FD21AE80E08004BB22B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		7BC90FD41AE812D9004BB22B /* CryptoTesterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTesterInterface.swift; sourceTree = "<group>"; };
+		A1570FAA70599944E56FC35E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +109,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC90FD01AE78B1E004BB22B /* SHA256iOs.framework in Frameworks */,
+				7B39AEAE1AEF00CF007F0536 /* libcrypto.a in Frameworks */,
+				7B39AEAF1AEF00CF007F0536 /* libssl.a in Frameworks */,
+				A85347AFF82E66788157B3A1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		733803AB43212CFAE6112F6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1570FAA70599944E56FC35E /* Pods.debug.xcconfig */,
+				02F312620A66F7EF522B1E08 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7B63EE501AE5FBA7002C7EDC /* SHA256-Swift-master */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +200,8 @@
 		7B6B2FA61AE5D5790090DC59 = {
 			isa = PBXGroup;
 			children = (
+				7B39AEAC1AEF00CF007F0536 /* libcrypto.a */,
+				7B39AEAD1AEF00CF007F0536 /* libssl.a */,
 				7B63EE501AE5FBA7002C7EDC /* SHA256-Swift-master */,
 				7B6B2FB11AE5D5790090DC59 /* Testing Crypto */,
 				7B6B2FCA1AE5D5790090DC59 /* Testing CryptoTests */,
@@ -172,6 +209,9 @@
 				7B6B2FEB1AE5F1FC0090DC59 /* Testing Crypto copy-Info.plist */,
 				7B63EE351AE5F821002C7EDC /* CommonCrypto copy-Info.plist */,
 				7B63EE3F1AE5F82E002C7EDC /* CommonCrypto copy copy-Info.plist */,
+				7B39AEB21AEF06A1007F0536 /* Crypto-Bridging-Header.h */,
+				733803AB43212CFAE6112F6F /* Pods */,
+				FD91A2A800ABD2954C6212A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +226,9 @@
 		7B6B2FB11AE5D5790090DC59 /* Testing Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				7B9F50EB1AEF13D5001F3849 /* AESOpenSSLClass.swift */,
+				7BBEC5DC1AEF593D004C947C /* AesXTS.m */,
+				7B9F50E71AEF1100001F3849 /* OpenSSLCrypto.h */,
 				7B6B2FB41AE5D5790090DC59 /* AppDelegate.swift */,
 				7B17A1ED1AE76FB400B925FE /* CommonCrypto.swift */,
 				7BC90FD41AE812D9004BB22B /* CryptoTesterInterface.swift */,
@@ -203,6 +246,8 @@
 		7B6B2FB21AE5D5790090DC59 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B8411A51AEB05B300B4FD19 /* 5m.zip */,
+				7B8411A31AEB053900B4FD19 /* 30m.zip */,
 				7B6B2FB31AE5D5790090DC59 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -225,6 +270,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FD91A2A800ABD2954C6212A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23F121FF25608929015BCA06 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,13 +285,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B6B2FD11AE5D5790090DC59 /* Build configuration list for PBXNativeTarget "Crypto" */;
 			buildPhases = (
+				4A52AE960E15E45B13D054E0 /* Check Pods Manifest.lock */,
 				7B6B2FAB1AE5D5790090DC59 /* Sources */,
 				7B6B2FAC1AE5D5790090DC59 /* Frameworks */,
 				7B6B2FAD1AE5D5790090DC59 /* Resources */,
+				8B04D342A38D14D0AE1A1858 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7B341F011AEFEFA400C84EFD /* PBXTargetDependency */,
 			);
 			name = Crypto;
 			productName = "Testing Crypto";
@@ -256,6 +312,7 @@
 				TargetAttributes = {
 					7B6B2FAE1AE5D5790090DC59 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 4TPAZD3KH3;
 					};
 				};
 			};
@@ -312,10 +369,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8411A41AEB053900B4FD19 /* 30m.zip in Resources */,
 				7B6B2FBD1AE5D5790090DC59 /* Main.storyboard in Resources */,
 				7B6B2FC21AE5D5790090DC59 /* LaunchScreen.xib in Resources */,
 				7B63EE6B1AE5FBA7002C7EDC /* SHA256Tests-Info.plist in Resources */,
 				7B63EE6A1AE5FBA7002C7EDC /* Info.plist in Resources */,
+				7B8411A61AEB05B300B4FD19 /* 5m.zip in Resources */,
 				7B63EE6D1AE5FBA7002C7EDC /* SHA256Tests-Info.plist in Resources */,
 				7B6B2FBF1AE5D5790090DC59 /* Images.xcassets in Resources */,
 				7B63EE6C1AE5FBA7002C7EDC /* SHA256-Info.plist in Resources */,
@@ -324,6 +383,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A52AE960E15E45B13D054E0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B04D342A38D14D0AE1A1858 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7B6B2FAB1AE5D5790090DC59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -331,9 +423,11 @@
 			files = (
 				7B63EE671AE5FBA7002C7EDC /* README.md in Sources */,
 				7B6B2FBA1AE5D5790090DC59 /* ViewController.swift in Sources */,
+				7BBEC5DD1AEF593D004C947C /* AesXTS.m in Sources */,
 				7BC90FD31AE80E08004BB22B /* Timer.swift in Sources */,
 				7B6B2FB51AE5D5790090DC59 /* AppDelegate.swift in Sources */,
 				7B17A1EE1AE76FB400B925FE /* CommonCrypto.swift in Sources */,
+				7B9F50EC1AEF13D5001F3849 /* AESOpenSSLClass.swift in Sources */,
 				7B63EE661AE5FBA7002C7EDC /* module.map in Sources */,
 				7B6B2FB81AE5D5790090DC59 /* Testing_Crypto.xcdatamodeld in Sources */,
 				7BC90FD51AE812D9004BB22B /* CryptoTesterInterface.swift in Sources */,
@@ -341,6 +435,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B341F011AEFEFA400C84EFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SHA256iOs;
+			targetProxy = 7B341F001AEFEFA400C84EFD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7B6B2FBB1AE5D5790090DC59 /* Main.storyboard */ = {
@@ -379,6 +481,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -424,6 +527,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -447,32 +551,66 @@
 		};
 		7B6B2FD21AE5D5790090DC59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1570FAA70599944E56FC35E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos8.3]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Testing Crypto/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @rpath/../SHA256iOs.framework/SHA256iOs";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
+					"$(PROJECT_DIR)/Testing",
+					Crypto,
+					/usr/local/ssl/ios/lib,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+					"/usr/local/ssl/ios/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "";
 				"SWIFT_INCLUDE_PATHS[arch=*]" = "/Users/sergey.gorbaty/Documents/research/SHA256-Swift-master/CommonCrypto";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crypto-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = /usr/local/ssl/ios/include;
 			};
 			name = Debug;
 		};
 		7B6B2FD31AE5D5790090DC59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02F312620A66F7EF522B1E08 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Testing Crypto/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @rpath/../SHA256iOs.framework/SHA256iOs";
 				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+					"/usr/local/ssl/ios/**",
+					"$(PROJECT_DIR)/Testing",
+					Crypto,
+					/usr/local/ssl/ios/lib,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_INCLUDE_PATHS = "";
 				"SWIFT_INCLUDE_PATHS[arch=*]" = "/Users/sergey.gorbaty/Documents/research/SHA256-Swift-master/CommonCrypto";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crypto-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = /usr/local/ssl/ios/include;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = /usr/local/ssl/ios/include;
 			};
 			name = Release;
 		};
