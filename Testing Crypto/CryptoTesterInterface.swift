@@ -24,6 +24,9 @@ protocol Command {
     var tester: CryptoTester { get set }
 
     func execute()
+    func test() -> NSData?
+    func getData() -> NSData
+
     func whoAmI() ->String
 }
 
@@ -44,6 +47,14 @@ class EncryptCommand : Command{
         return "\(tester.name) : \(name)"
     }
     
+    func test() -> NSData? {
+        return tester.encrypt(data)
+    }
+    
+    func getData() -> NSData {
+        return data;
+    }
+    
 }
 
 class DecryptCommand : Command{
@@ -62,7 +73,15 @@ class DecryptCommand : Command{
     func whoAmI() -> String {
         return "\(tester.name) : \(name)"
     }
-
+    
+    func test() -> NSData? {
+        return tester.decrypt(data)
+    }
+    
+    func getData() -> NSData {
+        return data;
+    }
+    
 }
 
 class Executor {
@@ -79,18 +98,26 @@ class Executor {
         listOfCryptors.append(command)
     }
     
+    func test(encryptor: Command, decryptor: Command) {
+        
+            let encVal = encryptor.test()
+            let decrVal = decryptor.test()
+        
+        
+    }
+    
     func executeAll() {
+        let n = 1000
         for exec in listOfCryptors {
-            let startTime = NSDate()
-            for _ in 1...1000 {
+            dispatch_async(dispatch_get_main_queue()) {
+                let startTime = NSDate()
                 exec.execute()
+                let finishTime = NSDate()
+                let executionTime = finishTime.timeIntervalSinceDate(startTime)
+                let normalizedTime = 1/(executionTime/1)
+                let formatted = NSString(format:"%.2f", normalizedTime)
+                self.delegate?.sendData("\(exec.whoAmI()) : \(formatted) ops/sec")
             }
-            let finishTime = NSDate()
-            let executionTime = finishTime.timeIntervalSinceDate(startTime)
-            let normalizedTime = 1/(executionTime/1000.0)
-            let formatted = NSString(format:"%.2f", normalizedTime)
-            delegate?.sendData("\(exec.whoAmI()) : \(formatted) ops/sec")
-            
         }
         delegate?.finished()
     }

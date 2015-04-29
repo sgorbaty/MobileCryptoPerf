@@ -16,26 +16,39 @@ class Timer {
     
     func run(data: NSData) {
         delegate?.sendData("Starting testing...")
+        
+        delegate?.sendData("Data length: \(data.length)")
+
+        
         var executor = Executor(delegate: delegate)
+        let aes128 = CommonCryptoClass(name: "AES128 CBC0")
+        let rc4 = CommonCryptoClass(name: "AES128 RC4  ", withAlgoritm: UInt32(kCCAlgorithmRC4))
+
+        let aesCBC = AESOpenSSLClass(name: "AES128 CBC1")
+        let aesCTR = AESOpenSSLClass(name: "AES128 CTR", withMode: 1)
+        let aesXts = AESOpenSSLClass(name: "AES128 XTS", withMode: 2)
+
         
-        let aes128 = CommonCryptoClass(name: "AES128")
-        let blowFish = CommonCryptoClass(name: "BlowFish", withAlgoritm: UInt32(kCCAlgorithmBlowfish))
-        let rc4 = CommonCryptoClass(name: "RC4", withAlgoritm: UInt32(kCCAlgorithmRC4))
-        let aesXst = AESOpenSSLClass(name: "Aes128 Xst")
-        
+        var encrVal = aes128.encrypt(data)
         executor.add(EncryptCommand(tester: aes128, data: data))
-        executor.add(DecryptCommand(tester: aes128, data: data))
-
-        executor.add(EncryptCommand(tester: blowFish, data: data))
-        executor.add(DecryptCommand(tester: blowFish, data: data))
-
-        executor.add(EncryptCommand(tester: rc4, data: data))
-        executor.add(DecryptCommand(tester: rc4, data: data))
-
-        executor.add(EncryptCommand(tester: aesXst, data: data))
-        executor.add(DecryptCommand(tester: aesXst, data: data))
-
+        executor.add(DecryptCommand(tester: aes128, data: encrVal!))
         
+        let encrValCBC = aesCBC.encrypt(data)
+        executor.add(EncryptCommand(tester: aesCBC, data: data))
+        executor.add(DecryptCommand(tester: aesCBC, data: encrValCBC!))
+
+        let encrValCTR = aesCTR.encrypt(data)
+        executor.add(EncryptCommand(tester: aesCTR, data: data))
+        executor.add(DecryptCommand(tester: aesCTR, data: encrValCTR!))
+        
+        let encrValXTS = aesXts.encrypt(data)
+        executor.add(EncryptCommand(tester: aesXts, data: data))
+        executor.add(DecryptCommand(tester: aesXts, data: encrValXTS!))
+        
+        let encrValrc4 = rc4.encrypt(data)
+        executor.add(EncryptCommand(tester: rc4, data: data))
+        executor.add(DecryptCommand(tester: rc4, data: encrValrc4!))
+
         executor.executeAll()
         
     }

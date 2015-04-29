@@ -45,7 +45,7 @@ class ViewController: UIViewController, AddPerfDataDelegate {
     }
     
     func startTesting() {
-        let data = ("asdfasdfasdfasdfasdfasdbahhkjhlkjhlkjhlkjhlkhlkjhl" as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+        let data = ("asdfasdfasdfasdfasdfasdbahhkjhlkjhlkjhlkjhlkhlkjhl34523452345345" as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
         startTestingWithData(data)
     }
 
@@ -54,8 +54,9 @@ class ViewController: UIViewController, AddPerfDataDelegate {
         let file = size.description + "m"
         let path = NSBundle.mainBundle().pathForResource(file, ofType: "zip")!
         
-            let text2 = path.dataUsingEncoding(NSUTF8StringEncoding)!
-            startTestingWithData(text2)
+        let text1 = NSData(contentsOfFile: path)
+        startTestingWithData(text1!)
+        
     }
 
     
@@ -64,7 +65,6 @@ class ViewController: UIViewController, AddPerfDataDelegate {
     }
     
     func finished() {
-        outputText.text = outputText.text + "Finished"
         currentlyRunningButton?.enabled = true
         running = false
     }

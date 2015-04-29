@@ -10,17 +10,12 @@
 #define Testing_Crypto_OpenSSLCrypto_h
 
 #import <Foundation/Foundation.h>
-
-@interface AESXSTOpenSSL : NSObject
-
-- (NSData*) encrypt: (NSData*)data;
-- (NSData*) decrypt: (NSData*)data;
-
-@end
+#import <OpenSSL-Universal/openssl/evp.h>
 
 
-@interface AES128OpenSSL : NSObject
+@interface OpenSSLCryptor : NSObject
 
+- (void) setup: (int) mode;
 - (NSData*) encrypt: (NSData*)data;
 - (NSData*) decrypt: (NSData*)data;
 

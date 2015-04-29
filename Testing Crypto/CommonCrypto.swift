@@ -33,13 +33,12 @@ class CommonCryptoClass : CryptoTester{
     func decrypt(someData: NSData) -> NSData? {
         return cryptInternal(someData, method: algoritm, operation: UInt32(kCCDecrypt))
     }
-
     
-    func cryptInternal(someData: NSData, method algoritm: CCAlgorithm, operation: CCOperation) -> NSData{
+    func cryptInternal(someData: NSData, method algoritm: CCAlgorithm, operation: CCOperation) -> NSData?{
         var bufferData    = NSMutableData(length: someData.length + kCCBlockSizeAES128)!
         var numBytesEncrypted: Int = 0
         
-        var cryptStatus = CCCrypt(operation, algoritm, CommonCryptoClass.options,
+        let cryptStatus = CCCrypt(operation, algoritm, CommonCryptoClass.options,
             CommonCryptoClass.secretkey.bytes, kCCBlockSizeAES128,
             CommonCryptoClass.iv.bytes,
             someData.bytes, someData.length,
@@ -50,13 +49,7 @@ class CommonCryptoClass : CryptoTester{
             bufferData.length = numBytesEncrypted
             return bufferData
         } else {
-            println("Error: \(cryptStatus)")
-            return NSData()
+            return nil
         }
     }
-
-
-    
-    
-
 }

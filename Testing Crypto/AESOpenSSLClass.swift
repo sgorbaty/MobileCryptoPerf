@@ -11,12 +11,13 @@ import Foundation
 class AESOpenSSLClass : CryptoTester {
     
     var name = String()
-    let aesCrypto = AESXSTOpenSSL()
+    let aesCrypto = OpenSSLCryptor()
     
-    init (name: String) {
+    init (name: String, withMode cipherMode: Int32 = 0) { // cbc 128 default
         self.name = name
-    }
+        aesCrypto.setup(cipherMode)
 
+    }
     
     func encrypt(someData: NSData) -> NSData? {
         return aesCrypto.encrypt(someData)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B17A1EE1AE76FB400B925FE /* CommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17A1ED1AE76FB400B925FE /* CommonCrypto.swift */; };
+		7B341F081AF1508D00C84EFD /* OpenSSLCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B341F071AF1508D00C84EFD /* OpenSSLCryptor.m */; };
 		7B39AEAE1AEF00CF007F0536 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B39AEAC1AEF00CF007F0536 /* libcrypto.a */; };
 		7B39AEAF1AEF00CF007F0536 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B39AEAD1AEF00CF007F0536 /* libssl.a */; };
 		7B63EE661AE5FBA7002C7EDC /* module.map in Sources */ = {isa = PBXBuildFile; fileRef = 7B63EE531AE5FBA7002C7EDC /* module.map */; };
@@ -25,7 +26,6 @@
 		7B8411A41AEB053900B4FD19 /* 30m.zip in Resources */ = {isa = PBXBuildFile; fileRef = 7B8411A31AEB053900B4FD19 /* 30m.zip */; };
 		7B8411A61AEB05B300B4FD19 /* 5m.zip in Resources */ = {isa = PBXBuildFile; fileRef = 7B8411A51AEB05B300B4FD19 /* 5m.zip */; };
 		7B9F50EC1AEF13D5001F3849 /* AESOpenSSLClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F50EB1AEF13D5001F3849 /* AESOpenSSLClass.swift */; };
-		7BBEC5DD1AEF593D004C947C /* AesXTS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBEC5DC1AEF593D004C947C /* AesXTS.m */; };
 		7BC90FD31AE80E08004BB22B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC90FD21AE80E08004BB22B /* Timer.swift */; };
 		7BC90FD51AE812D9004BB22B /* CryptoTesterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC90FD41AE812D9004BB22B /* CryptoTesterInterface.swift */; };
 		A85347AFF82E66788157B3A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F121FF25608929015BCA06 /* libPods.a */; };
@@ -66,6 +66,7 @@
 		02F312620A66F7EF522B1E08 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		23F121FF25608929015BCA06 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B17A1ED1AE76FB400B925FE /* CommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCrypto.swift; sourceTree = "<group>"; };
+		7B341F071AF1508D00C84EFD /* OpenSSLCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSSLCryptor.m; sourceTree = "<group>"; };
 		7B39AEAC1AEF00CF007F0536 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../../../usr/local/ssl/ios/lib/libcrypto.a; sourceTree = "<group>"; };
 		7B39AEAD1AEF00CF007F0536 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../../../usr/local/ssl/ios/lib/libssl.a; sourceTree = "<group>"; };
 		7B39AEB21AEF06A1007F0536 /* Crypto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crypto-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		7B8411A51AEB05B300B4FD19 /* 5m.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = 5m.zip; sourceTree = "<group>"; };
 		7B9F50E71AEF1100001F3849 /* OpenSSLCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLCrypto.h; path = ../OpenSSLCrypto.h; sourceTree = "<group>"; };
 		7B9F50EB1AEF13D5001F3849 /* AESOpenSSLClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESOpenSSLClass.swift; sourceTree = "<group>"; };
-		7BBEC5DC1AEF593D004C947C /* AesXTS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AesXTS.m; sourceTree = "<group>"; };
 		7BC90FD21AE80E08004BB22B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		7BC90FD41AE812D9004BB22B /* CryptoTesterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTesterInterface.swift; sourceTree = "<group>"; };
 		A1570FAA70599944E56FC35E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9F50EB1AEF13D5001F3849 /* AESOpenSSLClass.swift */,
-				7BBEC5DC1AEF593D004C947C /* AesXTS.m */,
+				7B341F071AF1508D00C84EFD /* OpenSSLCryptor.m */,
 				7B9F50E71AEF1100001F3849 /* OpenSSLCrypto.h */,
 				7B6B2FB41AE5D5790090DC59 /* AppDelegate.swift */,
 				7B17A1ED1AE76FB400B925FE /* CommonCrypto.swift */,
@@ -423,13 +423,13 @@
 			files = (
 				7B63EE671AE5FBA7002C7EDC /* README.md in Sources */,
 				7B6B2FBA1AE5D5790090DC59 /* ViewController.swift in Sources */,
-				7BBEC5DD1AEF593D004C947C /* AesXTS.m in Sources */,
 				7BC90FD31AE80E08004BB22B /* Timer.swift in Sources */,
 				7B6B2FB51AE5D5790090DC59 /* AppDelegate.swift in Sources */,
 				7B17A1EE1AE76FB400B925FE /* CommonCrypto.swift in Sources */,
 				7B9F50EC1AEF13D5001F3849 /* AESOpenSSLClass.swift in Sources */,
 				7B63EE661AE5FBA7002C7EDC /* module.map in Sources */,
 				7B6B2FB81AE5D5790090DC59 /* Testing_Crypto.xcdatamodeld in Sources */,
+				7B341F081AF1508D00C84EFD /* OpenSSLCryptor.m in Sources */,
 				7BC90FD51AE812D9004BB22B /* CryptoTesterInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
