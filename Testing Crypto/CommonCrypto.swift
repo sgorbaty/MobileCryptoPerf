@@ -45,11 +45,7 @@ class CommonCryptoClass : CryptoTester{
             bufferData.mutableBytes, bufferData.length,
             &numBytesEncrypted)
 
-        if (cryptStatus == 0) {
-            bufferData.length = numBytesEncrypted
-            return bufferData
-        } else {
-            return nil
-        }
+        bufferData.length = numBytesEncrypted
+        return bufferData
     }
 }
