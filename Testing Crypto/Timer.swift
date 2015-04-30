@@ -21,10 +21,10 @@ class Timer {
 
         
         var executor = Executor(delegate: delegate)
-        let aes128 = CommonCryptoClass(name: "AES128 CBC0")
-        let rc4 = CommonCryptoClass(name: "AES128 RC4  ", withAlgoritm: UInt32(kCCAlgorithmRC4))
+        let aes128 = CommonCryptoClass(name: "AES128 CBC - CC")
+        let rc4 = CommonCryptoClass(name: "AES128 RC4 - CC", withAlgoritm: UInt32(kCCAlgorithmRC4))
 
-        let aesCBC = AESOpenSSLClass(name: "AES128 CBC1")
+        let aesCBC = AESOpenSSLClass(name: "AES128 CBC")
         let aesCTR = AESOpenSSLClass(name: "AES128 CTR", withMode: 1)
         let aesXts = AESOpenSSLClass(name: "AES128 XTS", withMode: 2)
 

@@ -115,6 +115,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5ud-pt-2U9" firstAttribute="height" secondItem="1n3-mx-9fl" secondAttribute="height" id="1ES-Vn-MIq"/>
                             <constraint firstItem="gIt-yX-4sV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="2sl-SA-wLw"/>
                             <constraint firstItem="5ud-pt-2U9" firstAttribute="width" secondItem="1n3-mx-9fl" secondAttribute="width" id="38b-N3-klJ">
                                 <variation key="widthClass=compact" constant="-1"/>
@@ -146,6 +147,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YfT-hK-nMT" secondAttribute="bottom" constant="8" id="aqX-vk-nm4"/>
                             <constraint firstItem="5ud-pt-2U9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cKG-IC-Hgk"/>
                             <constraint firstItem="5ud-pt-2U9" firstAttribute="width" secondItem="1n3-mx-9fl" secondAttribute="width" id="ejR-XR-QIv"/>
+                            <constraint firstItem="5ud-pt-2U9" firstAttribute="height" secondItem="gIt-yX-4sV" secondAttribute="height" id="en0-o5-0M0"/>
                             <constraint firstItem="1n3-mx-9fl" firstAttribute="leading" secondItem="5ud-pt-2U9" secondAttribute="trailing" constant="16" id="f7W-2y-os2"/>
                             <constraint firstItem="gIt-yX-4sV" firstAttribute="leading" secondItem="1n3-mx-9fl" secondAttribute="trailing" constant="8" id="fvy-X6-QBB"/>
                             <constraint firstItem="5ud-pt-2U9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gby-qQ-ejy"/>
