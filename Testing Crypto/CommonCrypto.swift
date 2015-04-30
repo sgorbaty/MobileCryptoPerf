@@ -45,7 +45,11 @@ class CommonCryptoClass : CryptoTester{
             bufferData.mutableBytes, bufferData.length,
             &numBytesEncrypted)
 
-        bufferData.length = numBytesEncrypted
-        return bufferData
+        if Int(cryptStatus) == kCCSuccess {
+            bufferData.length = numBytesEncrypted
+            return bufferData
+        } else {
+            return nil
+        }
     }
 }
