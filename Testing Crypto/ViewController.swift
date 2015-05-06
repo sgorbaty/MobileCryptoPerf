@@ -47,8 +47,10 @@ class ViewController: UIViewController, AddPerfDataDelegate, UITableViewDelegate
         dictItems.removeAll()
      
         switch sender.restorationIdentifier! {
-        case "65kString":
-            startTesting()
+        case "64bString":
+            startTestingString(StringSize.SIZE64)
+        case "128bString":
+            startTestingString(StringSize.SIZE128)
         case "5mFile":
             startTestingLargeFiles(5)
         case "30mFile":
@@ -57,7 +59,11 @@ class ViewController: UIViewController, AddPerfDataDelegate, UITableViewDelegate
             break
         }
 
-        
+    }
+    
+    enum StringSize : String {
+        case SIZE64 = "asdfasdfasdfasdfasdfasdbahhkjhlkjhlkjhlkjhlkhlkjhl34523452345345"
+        case SIZE128 = "asdfasdfasdfasdfasdfasdbahhkjhlkjhlkjhlkjhlkhlkjhl34523452345345asdfasdfasdfasdfasdfasdbahhkjhlkjhlkjhlkjhlkhlkjhl34523452345345"
     }
     
     
@@ -67,8 +73,8 @@ class ViewController: UIViewController, AddPerfDataDelegate, UITableViewDelegate
         timer.run(data)
     }
     
-    func startTesting() {
-        let data = ("asdfasdfasdfasdfasdfasdbahhkjhlkjhlkjhlkjhlkhlkjhl34523452345345" as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+    func startTestingString(size: StringSize) {
+        let data = (size.rawValue as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
         startTestingWithData(data)
     }
 
