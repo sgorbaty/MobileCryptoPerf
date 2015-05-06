@@ -18,13 +18,13 @@ class CommonCryptoClass : CryptoTester{
         self.name = name
         self.algoritm = algoritm
     }
-
+    
     static let secretkey = NSMutableData(length: kCCBlockSizeAES128)!
     static let secretKeyData = SecRandomCopyBytes(kSecRandomDefault, kCCBlockSizeAES128, UnsafeMutablePointer<UInt8>(secretkey.mutableBytes))
     static let iv = NSMutableData(length: kCCBlockSizeAES128)!
     static let randomRes = SecRandomCopyBytes(kSecRandomDefault, kCCBlockSizeAES128, UnsafeMutablePointer<UInt8>(iv.mutableBytes))
     static let options:   CCOptions   = UInt32(kCCOptionPKCS7Padding)
-
+    
     
     func encrypt(someData: NSData) -> NSData? {
         return cryptInternal(someData, method: algoritm, operation: UInt32(kCCEncrypt))
@@ -44,7 +44,7 @@ class CommonCryptoClass : CryptoTester{
             someData.bytes, someData.length,
             bufferData.mutableBytes, bufferData.length,
             &numBytesEncrypted)
-
+        
         if Int(cryptStatus) == kCCSuccess {
             bufferData.length = numBytesEncrypted
             return bufferData

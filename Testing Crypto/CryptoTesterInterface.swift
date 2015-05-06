@@ -16,17 +16,17 @@ protocol CryptoTester {
 }
 
 protocol AddPerfDataDelegate {
-    func sendData(string: String)
+    func sendData(string: String, value: Double)
     func finished()
 }
 
 protocol Command {
     var tester: CryptoTester { get set }
-
+    
     func execute()
     func test() -> NSData?
     func getData() -> NSData
-
+    
     func whoAmI() ->String
 }
 
@@ -100,24 +100,20 @@ class Executor {
     
     func test(encryptor: Command, decryptor: Command) {
         
-            let encVal = encryptor.test()
-            let decrVal = decryptor.test()
+        let encVal = encryptor.test()
+        let decrVal = decryptor.test()
         
         
     }
     
     func executeAll() {
-        let n = 1000
         for exec in listOfCryptors {
-            dispatch_async(dispatch_get_main_queue()) {
                 let startTime = NSDate()
                 exec.execute()
                 let finishTime = NSDate()
                 let executionTime = finishTime.timeIntervalSinceDate(startTime)
                 let normalizedTime = 1/(executionTime/1)
-                let formatted = NSString(format:"%.2f", normalizedTime)
-                self.delegate?.sendData("\(exec.whoAmI()) : \(formatted) ops/sec")
-            }
+                self.delegate?.sendData("\(exec.whoAmI())", value: normalizedTime)
         }
         delegate?.finished()
     }

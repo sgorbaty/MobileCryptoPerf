@@ -16,7 +16,7 @@ class AESOpenSSLClass : CryptoTester {
     init (name: String, withMode cipherMode: Int32 = 0) { // cbc 128 default
         self.name = name
         aesCrypto.setup(cipherMode)
-
+        
     }
     
     func encrypt(someData: NSData) -> NSData? {
@@ -26,6 +26,6 @@ class AESOpenSSLClass : CryptoTester {
     func decrypt(someData: NSData) -> NSData? {
         return aesCrypto.decrypt(someData)
     }
-
+    
     
 }

@@ -8,22 +8,44 @@
 
 import UIKit
 
-class ViewController: UIViewController, AddPerfDataDelegate {
+class ViewController: UIViewController, AddPerfDataDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var outputText: UITextView!
-
+    @IBOutlet weak var outputTable: UITableView!
+    
     var currentlyRunningButton: UIButton?
-    var running = false
+    
+    var dictItems = [Double: String]()
 
-    @IBAction func startTests(sender: UIButton) {
-        if (running) {return}
-
-        sender.enabled = false
-        running = true
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dictItems.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.outputTable.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
-        currentlyRunningButton = sender
-        outputText.text = ""
+        var keys = self.dictItems.keys.array.sorted(>)
+        var key = keys[indexPath.row]
 
+        cell.textLabel?.text =  String (format:" \(self.dictItems[key]!) %.2f", key)
+        
+        return cell
+    }
+    
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        println("You selected cell #\(indexPath.row)!")
+//    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.outputTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    @IBAction func startTests(sender: UIButton) {
+        sender.enabled = false
+        currentlyRunningButton = sender
+        dictItems.removeAll()
+     
         switch sender.restorationIdentifier! {
         case "65kString":
             startTesting()
@@ -37,6 +59,7 @@ class ViewController: UIViewController, AddPerfDataDelegate {
 
         
     }
+    
     
     func startTestingWithData(data: NSData) {
         var timer = Timer()
@@ -59,14 +82,14 @@ class ViewController: UIViewController, AddPerfDataDelegate {
         
     }
 
-    
-    func sendData(string: String) {
-        outputText.text = outputText.text + string + "\r"
+    func sendData(name: String, value: Double) {
+        dictItems[value]=name;
     }
-    
+
+
     func finished() {
         currentlyRunningButton?.enabled = true
-        running = false
+        self.outputTable.reloadData()
     }
 
 }

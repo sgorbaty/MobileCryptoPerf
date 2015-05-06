@@ -39,7 +39,7 @@ static uint8_t encryptionKey[16];
     
     EVP_EncryptInit_ex(&cipherCtx, cipherMode, NULL, encryptionKey, iv);
     EVP_DecryptInit_ex(&decipherCtx, cipherMode, NULL, encryptionKey, iv);
-
+    
 }
 
 + (void) initialize {
