@@ -25,24 +25,24 @@ class Timer {
         
         
         var encrVal = aes128.encrypt(data)
-        executor.add(EncryptCommand(tester: aes128, data: data))
-        executor.add(DecryptCommand(tester: aes128, data: encrVal!))
+        executor.add(CommandImpl(name: "Encrypt", tester: aes128, data: data))
+        executor.add(CommandImpl(name: "Decrypt", tester: aes128, data: encrVal!))
         
         let encrValrc4 = rc4.encrypt(data)
-        executor.add(EncryptCommand(tester: rc4, data: data))
-        executor.add(DecryptCommand(tester: rc4, data: encrValrc4!))
+        executor.add(CommandImpl(name: "Encrypt", tester: rc4, data: data))
+        executor.add(CommandImpl(name: "Decrypt", tester: rc4, data: encrValrc4!))
         
         let encrValCBC = aesCBC.encrypt(data)
-        executor.add(EncryptCommand(tester: aesCBC, data: data))
-        executor.add(DecryptCommand(tester: aesCBC, data: encrValCBC!))
+        executor.add(CommandImpl(name: "Encrypt", tester: aesCBC, data: data))
+        executor.add(CommandImpl(name: "Decrypt", tester: aesCBC, data: encrValCBC!))
         
         let encrValCTR = aesCTR.encrypt(data)
-        executor.add(EncryptCommand(tester: aesCTR, data: data))
-        executor.add(DecryptCommand(tester: aesCTR, data: encrValCTR!))
+        executor.add(CommandImpl(name: "Encrypt", tester: aesCTR, data: data))
+        executor.add(CommandImpl(name: "Decrypt", tester: aesCTR, data: encrValCTR!))
         
         let encrValXTS = aesXts.encrypt(data)
-        executor.add(EncryptCommand(tester: aesXts, data: data))
-        executor.add(DecryptCommand(tester: aesXts, data: encrValXTS!))
+        executor.add(CommandImpl(name: "Encrypt", tester: aesXts, data: data))
+        executor.add(CommandImpl(name: "Decrypt", tester: aesXts, data: encrValXTS!))
         
         
         executor.executeAll()

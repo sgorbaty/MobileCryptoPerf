@@ -27,14 +27,10 @@ class ViewController: UIViewController, AddPerfDataDelegate, UITableViewDelegate
         var keys = self.dictItems.keys.array.sorted(>)
         var key = keys[indexPath.row]
 
-        cell.textLabel?.text =  String (format:" \(self.dictItems[key]!) %.2f", key)
+        cell.textLabel?.text =  String (format:" \(self.dictItems[key]!) %.2f operations/sec", key)
         
         return cell
     }
-    
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        println("You selected cell #\(indexPath.row)!")
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

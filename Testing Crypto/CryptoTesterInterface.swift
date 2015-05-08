@@ -30,15 +30,17 @@ protocol Command {
     func whoAmI() ->String
 }
 
-class EncryptCommand : Command{
-    var name = "Encrypt"
+class CommandImpl : Command {
+    var name = String()
     var tester: CryptoTester
     var data: NSData
-    init(tester: CryptoTester, data: NSData) {
+    
+    init(name: String, tester: CryptoTester, data: NSData) {
+        self.name = name;
         self.tester = tester
         self.data = data
     }
-    
+
     func execute() {
         tester.encrypt(data)
     }
@@ -49,33 +51,6 @@ class EncryptCommand : Command{
     
     func test() -> NSData? {
         return tester.encrypt(data)
-    }
-    
-    func getData() -> NSData {
-        return data;
-    }
-    
-}
-
-class DecryptCommand : Command{
-    var name = "Decrypt"
-    var tester: CryptoTester
-    var data: NSData
-    init(tester: CryptoTester, data: NSData) {
-        self.tester = tester
-        self.data = data
-    }
-    
-    func execute() {
-        tester.decrypt(data)
-    }
-    
-    func whoAmI() -> String {
-        return "\(tester.name) : \(name)"
-    }
-    
-    func test() -> NSData? {
-        return tester.decrypt(data)
     }
     
     func getData() -> NSData {
